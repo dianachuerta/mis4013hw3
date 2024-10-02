@@ -1,5 +1,5 @@
 <?php
-function selectCourses () {
+function selectCoursesByInstructor () {
     try {
         $conn = get_db_connection();
         $stmt = $conn->prepare("SELECT c.course_id, course_name, course_description, semester, room, date_time FROM 'course' c join section s on s.course_id = c.course_id where s.instructor_id=?");
